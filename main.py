@@ -4,9 +4,11 @@ def main():
     num_words = count_words(text)
     lowered_text = lower_text(text)
     characters = count_characters(lowered_text)
+    report_list = sort_dict(alphabet_dictionary)
     print(f"{num_words}")
     #print(f"{lowered_text}")
     print(f"{characters}")
+    
   
 
 def get_book_text(path):    
@@ -165,5 +167,7 @@ def count_characters(lowered_text):
     alphabet_dictionary = dict(zip(alphabet, alphabet_count))
     return alphabet_dictionary
 
+def sort_dict(alphabet_dictionary)
+    return sort(alphabet_dictionary)       
 
 main()
