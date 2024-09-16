@@ -1,10 +1,23 @@
 def main():
-    # Your main program logic goes here
+    book_path = "books/frankenstein.txt"
+    text = get_book_text(book_path)
+    num_words = count_words(text)
+    lowered_text = lower_text(text)
+    print(f"{num_words}")
+    print(f"{lowered_text}")
+  
 
-    with open(books/frankenstein.txt) as f:
-        file_contents = f.read()
-    pass
+def get_book_text(path):    
+    with open(path) as f:
+        return f.read()
+        
+def count_words(text):
+    words = text.split()
+    return len(words)
 
-    
-if __name__ == "__main__":
-    main()
+def lower_text(text):
+    return text.lower()
+
+#def count_characters(lowered_text)
+
+main()
