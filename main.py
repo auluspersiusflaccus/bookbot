@@ -9,7 +9,10 @@ def main():
     #print(f"{lowered_text}")
     #print(f"{characters}")  
     list_of_dicts.sort(reverse=True, key=get_count)
-    print(list_of_dicts)
+    for char_dict in list_of_dicts:
+        letter = char_dict["letter"]
+        count = char_dict["count"]
+        print(f"The letter'{letter}' was found {count} times")
  
     
 def get_book_text(path):    
