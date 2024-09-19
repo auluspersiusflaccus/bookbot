@@ -4,13 +4,14 @@ def main():
     num_words = count_words(text)
     lowered_text = lower_text(text)
     characters = count_characters(lowered_text)
-    report_list = sort_dict(alphabet_dictionary)
+    list_of_dicts = [{'letter': letter, 'count': count} for letter, count in characters.items()]
     print(f"{num_words}")
     #print(f"{lowered_text}")
-    print(f"{characters}")
+    #print(f"{characters}")  
+    list_of_dicts.sort(reverse=True, key=get_count)
+    print(list_of_dicts)
+ 
     
-  
-
 def get_book_text(path):    
     with open(path) as f:
         return f.read()
@@ -167,7 +168,9 @@ def count_characters(lowered_text):
     alphabet_dictionary = dict(zip(alphabet, alphabet_count))
     return alphabet_dictionary
 
-def sort_dict(alphabet_dictionary)
-    return sort(alphabet_dictionary)       
+def get_count(item):
+    return item["count"]
+
 
 main()
+
