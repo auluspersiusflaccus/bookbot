@@ -5,7 +5,8 @@ def main():
     lowered_text = lower_text(text)
     characters = count_characters(lowered_text)
     list_of_dicts = [{'letter': letter, 'count': count} for letter, count in characters.items()]
-    print(f"{num_words}")
+    print(f"--- Begin report of {book_path} ---")
+    print(f"{num_words} words found in the document")
     #print(f"{lowered_text}")
     #print(f"{characters}")  
     list_of_dicts.sort(reverse=True, key=get_count)
@@ -13,7 +14,7 @@ def main():
        letter = char_dict["letter"]
        count = char_dict["count"]
        print(f"The letter'{letter}' was found {count} times")
-         
+    print("--- End report ---")  
     
 def get_book_text(path):    
     with open(path) as f:
